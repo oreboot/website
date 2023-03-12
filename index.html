@@ -31,9 +31,9 @@ a, a:visited {
 }
 menu {
   position: fixed;
-  width: 30%;
+  width: 20%;
   min-width: 60px;
-  max-width: 100px;
+  max-width: 80px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ main {
   display: flex;
   flex-direction: column;
   /* padding for the menu */
-  padding-left: 30%;
+  padding-left: 20%;
   max-width: 1000px;
   background: #fff;
 }
@@ -62,8 +62,8 @@ main {
 nav {
   background: #8dcaf0f8;
   height: 100%;
-  width: 300%;
-  padding: 20px 35px;
+  width: 350%;
+  padding: 20px 10px;
   max-width: 300px;
   transition: left .3s cubic-bezier(.1,.3,.3,.7);
   position: absolute;
@@ -92,6 +92,7 @@ nav div a {
   height: 100%;
 }
 nav a, nav a:visited {
+  padding: 0 5px;
   color: #000;
   font-size: 22pt;
 }
@@ -103,13 +104,13 @@ menu button {
   border: 5px solid #000;
   border-left: none;
   border-right: none;
-  width: 50px;
+  width: 40px;
   height: 30px;
   padding: 0;
   margin: 10px 0;
 }
 nav button {
-  width: 50px;
+  width: 40px;
   background: #8dcaf0;
 }
 nav img {
@@ -135,7 +136,7 @@ p {
   font-size: 13.5pt;
 }
 .fork {
-  max-width: 360px;
+  max-width:  240px;
   max-height: 100px;
 }
 </style>
@@ -180,12 +181,12 @@ p {
 
     <section id="about">
       <h2>about</h2>
-      <img src="fork.png" class="fork" alt="oreboot forked from coreboot" />
       <p>
 oreboot is a fork of <a href="https://coreboot.org">coreboot</a>,
 with C removed,
 <a href="#drivers">written in Rust</a>.
       </p>
+      <img src="fork.png" class="fork" alt="oreboot forked from coreboot" />
     </section>
 
     <section id="getting-started">
@@ -212,14 +213,14 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
     <section id="platforms">
       <h2>platforms</h2>
       <p>
-        lorem ipsum......
+The focus of the oreboot lies on application processor platforms that come with the documentation necessary for implementing the bringup to the point where an operating system can taker over. That comprises GPIOs, PLLs, clocks and DRAM mainly.
       </p>
     </section>
 
     <section id="community">
       <h2>community</h2>
       <p>
-        lorem ipsum......
+We have a channel named <em>#oreboot</em> in the <a href="https://slack.osfw.dev/">Open Source Firmware Slack team</a>.
       </p>
     </section>
   </main>

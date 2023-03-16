@@ -54,7 +54,7 @@ main {
   max-width: 1000px;
   background: #fff;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 480px) {
   main {
     padding-left: 140px;
   }
@@ -156,9 +156,9 @@ p {
         </a>
       </div>
       <a href="#getting-started">Getting Started</a>
-      <a href="#drivers">Drivers</a>
-      <a href="#boot-flow">Boot Flow</a>
       <a href="#platforms">Supported Platforms</a>
+      <a href="#boot-flow">Boot Flow</a>
+      <a href="#drivers">Drivers</a>
       <a href="#community">Community</a>
     </nav>
     <a href="#about">
@@ -191,28 +191,29 @@ with C removed,
     <section id="getting-started">
       <h2>getting started</h2>
       <p>
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-      </p>
-    </section>
-
-    <section id="drivers">
-      <h2>drivers</h2>
-      <p>
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
-      </p>
-    </section>
-
-    <section id="boot-flow">
-      <h2>boot flow</h2>
-      <p>
-Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+Follow the <a href="https://github.com/oreboot/oreboot/#getting-oreboot">instructions in the code repository</a> in order to set up oreboot for development.
       </p>
     </section>
 
     <section id="platforms">
       <h2>platforms</h2>
       <p>
-The focus of the oreboot lies on application processor platforms that come with the documentation necessary for implementing the bringup to the point where an operating system can taker over. That comprises GPIOs, PLLs, clocks and DRAM mainly.
+The focus of the oreboot project lies on application processor platforms that come with the documentation necessary for implementing the bringup to the point where an operating system can taker over. That comprises GPIOs, PLLs, clocks and DRAM mainly.
+      </p>
+    </section>
+
+    <section id="boot-flow">
+      <h2>boot flow</h2>
+      <p>
+The boot flow concept is <a href="https://github.com/oreboot/oreboot/blob/main/Documentation/boot-flow.md">fully documented in the oreboot code repository</a>.
+In general, a single stage within oreboot should be aimed for. If not otherwise possible, initialize DRAM in an initial stage, and then have additional code in a second stage that you load to the then-available DRAM.
+      </p>
+    </section>
+
+    <section id="drivers">
+      <h2>drivers</h2>
+      <p>
+Due to the minimal scope, oreboot has no need for complex drivers. With a logging library requiring to implement the Rust Embedded serial Write trait, a typical mainboard implementation is all set. In some cases, it may be necessary to load additional code from flash. For that purpose, implement a handful of simple functions doing so. Since further initialization is offloaded to a payload, write access is not necessary.
       </p>
     </section>
 
